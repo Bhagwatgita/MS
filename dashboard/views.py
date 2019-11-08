@@ -35,7 +35,7 @@ def index(request):
         else:
             context = {'message':'Invalid User Name and Password'}
             return render(request, 'index.html', context)
-    return render(request, 'index.html', {'name': 'Riajul Kashem', 'pass': 'login@srms'})
+    return render(request, 'index.html', {'name': 'testadmin', 'pass': 'admin@123'})
 
 
 class DashboardView(LoginRequiredMixin,TemplateView):
