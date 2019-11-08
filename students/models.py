@@ -16,7 +16,7 @@ class Student(models.Model):
     student_email = models.EmailField()
     student_gender = models.CharField(max_length=8, choices=select_gender)
     student_class = models.ForeignKey(StudentClass, on_delete=models.CASCADE)
-    student_date_of_birth = models.DateField(default=date.today())
+    student_date_of_birth = models.DateField(auto_now_add=True)
     student_reg = models.DateField(auto_now_add=True, auto_now=False)
 
     def get_absolute_url(self):
