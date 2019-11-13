@@ -1,6 +1,7 @@
 import os
 import dj_database_url
 
+
 # Base directory
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -13,8 +14,8 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 # Allowed Host Configuration
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost',]
-
+ALLOWED_HOSTS = ['127.0.0.1','localhost','10.0.75.1','10.7.1.1','10.7.1.24',]
+# http://10.7.1.25:3000/
 # Installed Application
 
 INSTALLED_APPS = [
@@ -68,10 +69,20 @@ WSGI_APPLICATION = 'srms.wsgi.application'
 
 
 # SQLite Database Specification
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'sqlite3.db'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'sqlite3.db'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 
@@ -120,4 +131,6 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'SRMS/static_cdn')
 
 LOGOUT_REDIRECT_URL = 'home'
 LOGIN_URL = 'home'
+
+
 
