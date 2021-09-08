@@ -17,7 +17,7 @@ idna==2.8
 jmespath==0.9.4
 jsonfield==2.0.2
 olefile==0.46
-Pillow==6.2.1
+Pillow==8.3.2
 pisa==3.0.33
 psycopg2-binary==2.8.4
 PyPDF2==1.26.0
